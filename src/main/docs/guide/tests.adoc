@@ -1,0 +1,39 @@
+include::{commondir}/common-spek.adoc[]
+
+Create a test which verifies that when you do a GET request to `/info` you get a payload such as:
+
+[source, json]
+----
+{
+  "git": {
+    "dirty": "true",
+    "commit": {
+      "id": "7368906193527fbf2b45f1ed5b08c56631f5b155",
+      "describe": "7368906-dirty",
+      "time": "1527429126",
+      "message": {
+        "short": "Initial version",
+        "full": "Initial version"
+      },
+      "user": {
+        "name": "sdelamo",
+        "email": "sergio.delamo@softamo.com"
+      }
+    },
+    "branch": "master"
+  }
+}
+----
+
+Create a http://spockframework.org[Spock] feature method to verify the behaviour:
+
+[source,groovy]
+.src/test/kotlin/example/micronaut/InfoSpec.kt
+----
+include::{sourceDir}/src/test/kotlin/example/micronaut/InfoSpec.kt[]
+----
+
+<1> To run the application from a unit test you can use the http://docs.micronaut.io/snapshot/api/io/micronaut/runtime/server/EmbeddedServer.html[EmbeddedServer] interface
+<2> Register a `RxClient` bean in the application context and point it to the embedded server URL. The `EmbeddedServer` interface provides the URL of the server under test which runs on a random port.
+<3> Creating HTTP Requests is easy thanks to Micronaut's fluid API.
+<4> Use `.body()` to retrieve the parsed payload.
