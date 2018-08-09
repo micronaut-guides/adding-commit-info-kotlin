@@ -27,7 +27,7 @@ Create a test which verifies that when you do a GET request to `/info` you get a
 
 Create a http://spockframework.org[Spock] feature method to verify the behaviour:
 
-[source,groovy]
+[source,kotlin]
 .src/test/kotlin/example/micronaut/InfoSpec.kt
 ----
 include::{sourceDir}/src/test/kotlin/example/micronaut/InfoSpec.kt[]
