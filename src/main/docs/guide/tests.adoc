@@ -1,4 +1,4 @@
-include::{commondir}/common-spek.adoc[]
+include::{commondir}/common-spek2.adoc[]
 
 Create a test which verifies that when you do a GET request to `/info` you get a payload such as:
 

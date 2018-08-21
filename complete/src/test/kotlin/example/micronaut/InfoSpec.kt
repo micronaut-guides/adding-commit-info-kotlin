@@ -5,17 +5,16 @@ import io.micronaut.http.HttpRequest
 import io.micronaut.http.HttpStatus
 import io.micronaut.http.client.HttpClient
 import io.micronaut.runtime.server.EmbeddedServer
-import org.jetbrains.spek.api.Spek
-import org.jetbrains.spek.api.dsl.describe
-import org.jetbrains.spek.api.dsl.on
+import org.spekframework.spek2.Spek
+import org.spekframework.spek2.style.specification.describe
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
 
-class HomeControllerSpec: Spek({
+object InfoSpec: Spek({
     describe("info endpoint") {
         var embeddedServer : EmbeddedServer = ApplicationContext.run(EmbeddedServer::class.java) // <1>
         var client : HttpClient  = HttpClient.create(embeddedServer.url) // <2>
-        on("test git commit info appears in JSON") {
+        it("test git commit info appears in JSON") {
             val request: HttpRequest<Any> = HttpRequest.GET("/info") // <3>
             var rsp = client.toBlocking().exchange(request, Map::class.java)
 
