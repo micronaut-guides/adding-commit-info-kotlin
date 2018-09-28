@@ -25,7 +25,7 @@ Create a test which verifies that when you do a GET request to `/info` you get a
 }
 ----
 
-Create a http://spockframework.org[Spock] feature method to verify the behaviour:
+Create a https://spekframework.org/[Spek] feature method to verify the behaviour:
 
 [source,kotlin]
 .src/test/kotlin/example/micronaut/InfoSpec.kt
