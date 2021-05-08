@@ -1,3 +1,5 @@
-# Adding Commit Info to your Micronaut Application 
+# This guide has been deprecated and moved to https://github.com/micronaut-projects/micronaut-guides-poc. Please open any issue or pull request in that repository.
 
-Guide: http://guides.micronaut.io/adding-commit-info-kotlin/guide/index.html
+Old Guide: 
+
+https://micronaut-projects.github.io/micronaut-guides-old/adding-commit-info-kotlin/guide/index.html
